@@ -1,0 +1,40 @@
+h1, h3 {
+    color: #65000b;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+hr{
+    width: 550px;
+    border: 1px solid;
+}
+
+#game{
+    width: 800px;
+    height: 800px;
+    background-color:#65000b;
+    border: 6px solid #000000; 
+
+    /* put the game board in the center of the page */
+    margin: 0 auto; 
+
+     /* set to only four blocks/row instead of all 16 blocks in one row  */
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.block {
+    width: 180px;
+    height: 180px;
+    border: 10px solid #000000;
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+
+    /* puts text in the center of block */
+    justify-content: center;
+    align-items: center;
+}
