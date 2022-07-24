@@ -38,3 +38,42 @@ hr{
     justify-content: center;
     align-items: center;
 }
+
+/* 9 images = 9 levels for blocks */
+.block2 {
+    color: #65000b;
+}
+
+.block4 {
+    color: #65000b;
+}
+
+.block8 {
+    color: #65000b;
+}
+
+.block16 {
+    color: #65000b;
+}
+
+.block32 {
+    color: #65000b;
+}
+
+.block64 {
+    color: #65000b;
+}
+
+.block128 {
+    color: #65000b;
+}
+
+.block256 {
+    color: #65000b;
+}
+
+.block512 {
+    color: #65000b;
+}
+
+
