@@ -1,0 +1,67 @@
+:root { /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
+    background-color: black;
+    font-size: 10px;
+}
+
+
+* { /* all elements */
+    box-sizing: border-box; /*source: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #88242e;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1 {
+    font-size: 6em;
+    color: #88242e;
+    margin-bottom: 1em;
+}
+
+
+
+.container {
+    /* entire page */
+    width: 100vw;
+    height: 100vh; 
+
+    /* in center horizontally & vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+.button {
+    font-size: 30px;
+    color: #88242e;
+    text-decoration: none;
+    text-align: center;
+
+    padding: 10px 0;
+    width: 200px;
+    border: 7px solid #88242e;
+    margin-bottom: 15px;
+    background-color: black;
+}
+
+
+
+.flexCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
