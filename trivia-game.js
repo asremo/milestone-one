@@ -1,15 +1,20 @@
+const question = document.getElementById("question");
+const answers = Array.from(document.getElementsByClassName("answers-text"));
+    // Array.from source: https://www.w3schools.com/jsref/jsref_from.asp
+
+
 // questions sources: 
     // https://www.triviawell.com/questions/stranger-things
     // https://netflixlife.com/2022/07/20/stranger-things-season-4-quiz-trivia/
     // https://www.buzzfeed.com/jamiejirak1/quiz-stranger-things-2
 
-let listOfQuestions = [
+const listOfQuestions = [
     {
         question: "Where did the boys discover Eleven?",
 
         answer1: "In the hospital.",
         answer2: "In a diner.",
-        answer3: "In the woods.",
+        answer3: "In the woods.",   
         answer4: "In an arcade.",
 
         rightAnswer: 3
@@ -104,4 +109,51 @@ let listOfQuestions = [
 
         rightAnswer: 3
     },
-]
+];
+
+
+let currentQuestion = {}; // {} declares an object
+    // {} source: https://stackoverflow.com/questions/33514915/what-s-the-difference-between-and-while-declaring-a-javascript-array#:~:text=%7B%7D%20is%20declaring%20an%20object,an%20array%20is%20an%20object.
+
+let questionNumber = 0;
+let questionsLeftInList = [];
+
+const correctPoints = 10;
+const maxQuestions = 10;
+
+
+// playGame function
+playGame = () => {
+    // arrow functions source: https://www.w3schools.com/js/js_arrow_function.asp
+
+    // start fresh with 0
+    questionNumber = 0;
+
+    questionsLeftInList = [ ... listOfQuestions];
+    // spread syntax source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+    console.log(questionsLeftInList);
+    getNewQuestion();
+};
+
+// getNewQuestion function
+getNewQuestion = () => {
+    questionNumber++;
+
+    const questionsIndex = Math.floor(Math.random() * questionsLeftInList.length);
+    // Math.floor() source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+    // Math.random() source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    
+    currentQuestion = questionsLeftInList[questionsIndex];
+    question.innerText = currentQuestion.question;
+
+    answers.forEach( answers => {
+        const number = answers.dataset["number"];
+        // HTMLelement.dataset source: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
+        
+        answers.innerText = currentQuestion["answer" + number];
+    });
+};
+
+// call playGame function
+playGame();
