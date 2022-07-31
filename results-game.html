@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div id="done" class="flexCenter flexColumn">
+            <h1 id="totalScore">0</h1>
+            <form> <!--form source: https://www.w3schools.com/html/html_forms.asp-->
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Enter your name."
+                >
+                <button
+                    type="submit"
+                    class="button"
+                    id="submitScoreButton"
+                    onclick="submitScore(event)"
+                >
+                    Submit
+                </button>
+                <!--button source: https://www.w3schools.com/tags/tag_button.asp-->
+                <!--button source: https://www.freecodecamp.org/news/html-button-onclick-javascript-click-event-tutorial/-->
+            </form>
+            <a class="button" href="/trivia-game.html">Play Again</a>
+            <a class="button" href="/index.html">Go Home</a>
+        </div>
+    </div>
 </body>
 </html>
