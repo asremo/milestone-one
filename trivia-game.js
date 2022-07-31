@@ -113,10 +113,11 @@ const listOfQuestions = [
 
 
 let currentQuestion = {}; // {} declares an object
-    // {} source: https://stackoverflow.com/questions/33514915/what-s-the-difference-between-and-while-declaring-a-javascript-array#:~:text=%7B%7D%20is%20declaring%20an%20object,an%20array%20is%20an%20object.
-
+let score = 0;
 let questionNumber = 0;
 let questionsLeftInList = [];
+// {} and [] source: https://stackoverflow.com/questions/33514915/what-s-the-difference-between-and-while-declaring-a-javascript-array#:~:text=%7B%7D%20is%20declaring%20an%20object,an%20array%20is%20an%20object.
+
 
 const correctPoints = 10;
 const maxQuestions = 10;
@@ -155,6 +156,9 @@ getNewQuestion = () => {
         
         answers.innerText = currentQuestion["answer" + number];
     });
+
+    questionsLeftInList.splice(questionsIndex, 1); //splice removes used question
+    // splice source: https://www.w3schools.com/jsref/jsref_splice.asp
 };
 
 
@@ -162,7 +166,7 @@ answers.forEach( answers => {
     answers.addEventListener("click", e => {
         const clickedAnswer = e.target;
         // e.target source: https://www.w3schools.com/jsref/event_target.asp
-        
+
         const selectedAnswer = clickedAnswer.dataset["number"];
 
         console.log(selectedAnswer == currentQuestion.rightAnswer)
@@ -173,7 +177,7 @@ answers.forEach( answers => {
             getNewQuestion();
         } else {
             getNewQuestion();
-        }
+        };
     });
 });
 
