@@ -128,6 +128,7 @@ playGame = () => {
 
     // start fresh with 0
     questionNumber = 0;
+    score = 0;
 
     questionsLeftInList = [ ... listOfQuestions];
     // spread syntax source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
@@ -155,6 +156,26 @@ getNewQuestion = () => {
         answers.innerText = currentQuestion["answer" + number];
     });
 };
+
+
+answers.forEach( answers => {
+    answers.addEventListener("click", e => {
+        const clickedAnswer = e.target;
+        // e.target source: https://www.w3schools.com/jsref/event_target.asp
+        
+        const selectedAnswer = clickedAnswer.dataset["number"];
+
+        console.log(selectedAnswer == currentQuestion.rightAnswer)
+        if (selectedAnswer == currentQuestion.rightAnswer) {
+            score += correctPoints;
+            displayScore.innerText = score;
+            console.log("score: " + score);
+            getNewQuestion();
+        } else {
+            getNewQuestion();
+        }
+    });
+});
 
 
 // call playGame function
