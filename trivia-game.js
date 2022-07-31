@@ -141,6 +141,11 @@ playGame = () => {
 
 // getNewQuestion function
 getNewQuestion = () => {
+    if(questionsLeftInList.length === 0 || questionNumber >= maxQuestions) {
+        return window.location.assign("/results-game.html"); // goes to the end page
+        // window.location.assign source: https://developer.mozilla.org/en-US/docs/Web/API/Location/assign
+    };
+
     questionNumber++;
 
     const questionsIndex = Math.floor(Math.random() * questionsLeftInList.length);
@@ -157,7 +162,7 @@ getNewQuestion = () => {
         answers.innerText = currentQuestion["answer" + number];
     });
 
-    questionsLeftInList.splice(questionsIndex, 1); //splice removes used question
+    questionsLeftInList.splice(questionsIndex, 1); //splice removes used question so no repeats
     // splice source: https://www.w3schools.com/jsref/jsref_splice.asp
 };
 
