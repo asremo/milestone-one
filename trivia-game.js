@@ -136,6 +136,7 @@ playGame = () => {
     getNewQuestion();
 };
 
+
 // getNewQuestion function
 getNewQuestion = () => {
     questionNumber++;
@@ -154,6 +155,7 @@ getNewQuestion = () => {
         answers.innerText = currentQuestion["answer" + number];
     });
 };
+
 
 // call playGame function
 playGame();

@@ -1,0 +1,43 @@
+.answers-container {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 7px solid #88242e;
+
+    font-size: 24px;
+}
+
+
+.answers-container:hover {
+    cursor: pointer;
+    /* document source: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor */
+
+}
+
+
+.answers-letter {
+    padding: 18px 28px;
+    background-color: #88242e;
+    color: black;
+    font-weight: 900;
+}
+
+
+.answers-text {
+    padding: 15px;
+    width: 100%;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+p {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+
+#displayScore {
+    margin-bottom: 20px;
+}

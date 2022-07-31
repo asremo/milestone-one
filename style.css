@@ -12,6 +12,7 @@
     padding: 0;
 }
 
+
 audio {
     display: none;
 }
@@ -23,6 +24,12 @@ h1 {
     margin-bottom: 1em;
 }
 
+
+h2{
+    font-size: 4em;
+    font-weight: 700;
+    margin-bottom: 0.75em;
+}
 
 
 .container {
@@ -40,6 +47,11 @@ h1 {
 }
 
 
+.container > * {
+    /* for children of container */
+    width: 100%;
+}
+
 
 .button {
     font-size: 30px;
@@ -55,11 +67,11 @@ h1 {
 }
 
 
-
 .flexCenter {
     justify-content: center;
     align-items: center;
 }
+
 
 .flexColumn {
     display: flex;
@@ -67,4 +79,7 @@ h1 {
 }
 
 
+.justifyCenter {
+    justify-content: center;
+}
 
