@@ -10,12 +10,13 @@
 <body>
     <div class="container">
         <div id="done" class="flexCenter flexColumn">
-            <h1 id="totalScore">0</h1>
+            <p>Total Score:</p>
+            <h1 id="totalScore"></h1>
             <form> <!--form source: https://www.w3schools.com/html/html_forms.asp-->
                 <input 
                     type="text" 
-                    id="name" 
-                    name="name" 
+                    id="playerName" 
+                    name="playerName" 
                     placeholder="Enter your name."
                 >
                 <button
@@ -29,9 +30,10 @@
                 <!--button source: https://www.w3schools.com/tags/tag_button.asp-->
                 <!--button source: https://www.freecodecamp.org/news/html-button-onclick-javascript-click-event-tutorial/-->
             </form>
-            <a class="button" href="/trivia-game.html">Play Again</a>
-            <a class="button" href="/index.html">Go Home</a>
+            <a class="button" href="/index.html">Start Over</a>
         </div>
     </div>
+
+    <script src="results-game.js"></script>
 </body>
 </html>

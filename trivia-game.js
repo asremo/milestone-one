@@ -142,6 +142,9 @@ playGame = () => {
 // getNewQuestion function
 getNewQuestion = () => {
     if(questionsLeftInList.length === 0 || questionNumber >= maxQuestions) {
+        localStorage.setItem("newTotalScore", score); //saves score to local storage
+        // localStorage.setItem source: https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+
         return window.location.assign("/results-game.html"); // goes to the end page
         // window.location.assign source: https://developer.mozilla.org/en-US/docs/Web/API/Location/assign
     };
