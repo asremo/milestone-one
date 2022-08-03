@@ -12,6 +12,8 @@
     cursor: pointer;
     /* document source: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor */
 
+    box-shadow: 0 1px 7px 3px #88242e;
+
 }
 
 

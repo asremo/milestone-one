@@ -1,5 +1,5 @@
-const question = document.getElementById("question");
-const answers = Array.from(document.getElementsByClassName("answers-text"));
+const question = document.getElementById("question"); // gets id from trivia-game.html
+const answers = Array.from(document.getElementsByClassName("answers-text")); // get array from trivia-game.html
     // Array.from source: https://www.w3schools.com/jsref/jsref_from.asp
 
 
@@ -142,6 +142,7 @@ playGame = () => {
 // getNewQuestion function
 getNewQuestion = () => {
     if(questionsLeftInList.length === 0 || questionNumber >= maxQuestions) {
+
         localStorage.setItem("newTotalScore", score); //saves score to local storage
         // localStorage.setItem source: https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
 
@@ -159,7 +160,7 @@ getNewQuestion = () => {
     question.innerText = currentQuestion.question;
 
     answers.forEach( answers => {
-        const number = answers.dataset["number"];
+        const number = answers.dataset["number"]; // dataset from data-number in trivia-game.html 
         // HTMLelement.dataset source: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
         
         answers.innerText = currentQuestion["answer" + number];
@@ -170,6 +171,7 @@ getNewQuestion = () => {
 };
 
 
+// answers event listener
 answers.forEach( answers => {
     answers.addEventListener("click", e => {
         const clickedAnswer = e.target;
@@ -177,9 +179,10 @@ answers.forEach( answers => {
 
         const selectedAnswer = clickedAnswer.dataset["number"];
 
-        console.log(selectedAnswer == currentQuestion.rightAnswer)
+        console.log(selectedAnswer == currentQuestion.rightAnswer);
+
         if (selectedAnswer == currentQuestion.rightAnswer) {
-            score += correctPoints;
+            score += correctPoints; // adds points to score variable when clicked on right answer
             displayScore.innerText = score;
             console.log("score: " + score);
             getNewQuestion();
